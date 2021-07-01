@@ -7,18 +7,37 @@ var youngDiscount = ticketCost * (20 / 100);
 var oldDiscount = ticketCost * (40 / 100);
 var finalPrice;
 
-if (passengerAge < 18) {
-    finalPrice = ticketCost - youngDiscount;
-} else if (passengerAge >= 65) {
-    finalPrice = ticketCost - oldDiscount;
+// Ticket final price 
+
+// Validation
+if (!isNaN(travelDistance) && !isNaN(passengerAge)) {
+
+    if (passengerAge < 18) {
+        finalPrice = ticketCost - youngDiscount;
+    } else if (passengerAge >= 65) {
+        finalPrice = ticketCost - oldDiscount;
+    } else {
+        finalPrice = ticketCost;
+    }
+
 } else {
-    finalPrice = ticketCost;
+
+    console.log('Please enter a number!')
+
 }
+
+// Display only 2 decimals
+finalPrice = finalPrice.toFixed(2);
+
+
+
+
+
 
 console.log(travelDistance);
 console.log(passengerAge);
-console.log(ticketPriceEachKm);
-console.log(ticketCost);
+// console.log(ticketPriceEachKm);
+// console.log(ticketCost);
 // console.log(youngDiscount);
 // console.log(oldDiscount);
 console.log(finalPrice);
